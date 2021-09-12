@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PasswordRule2 {
+public class PasswordRule3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -15,10 +15,12 @@ public class PasswordRule2 {
     }
 
     private static void validatePassword(String password) {
-        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z]).{8,20}$";
+        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$";
         Pattern pattern = Pattern.compile(passwordRegex);
         Matcher matcher = pattern.matcher(password);
         System.out.println("is valid password: " +matcher.matches());
     }
+
+
 }
 
